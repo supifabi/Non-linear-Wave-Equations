@@ -23,6 +23,8 @@
 \newtheorem{bsp}[definition]{Example}
 \newtheorem{cor}[definition]{Corollary}
 
+\newcommand{\Rn}{\mathbb{R}^n}
+
 \title{Non-Linear Wave Equations Basics}
 \author{Fabienne Klatt}
 \date{23.11.22}
@@ -36,7 +38,19 @@
 
 Here everything can be written down that helps with understanding the Non-Linear Wave Equations Lecture and solving the exercises.
 
-\section{Norms Used}
+\section{Norms}
+
+\begin{definition}[Sobolev space]
+
+\end{definition}
+
+\begin{definition}[fractional Sobolev space; source: exercise session 1]
+For $s\in\mathbb{R}$ (?) $H^s(\mathbb{R}^n)$ is the completion of $C^{\infty}_0(\mathbb{R}^n)$ with respect to the norm
+\begin{equation}
+\lVert f \rVert_{H^s(\mathbb{R}^n)}=\lVert (1+\lvert\xi\rvert^2)^{\frac{s}{2}}\mathcal{F}(f)\rVert_{L^2(\mathbb{R}^n)}
+\end{equation}
+where $(1+\lvert\xi\rvert^2)^{\frac{s}{2}}$ corresponds to a derivative in physical space.
+\end{definition}
 
 \section{Functional Analysis Theorems}
 
@@ -67,6 +81,48 @@ Then, there exists a subsequence $(\phi^{(i_{\lambda})})$ that converges in $C^{
 
 \section{Fourier Transformation}
 
+Open Question: What is the advantage of Fourier representation?
+
+\begin{definition}[Schwartz space]
+The Schwartz space $\mathcal{S}(\mathbb{R}^n)$ is a vectorspace given by
+\begin{equation}
+\mathcal{S}(\mathbb{R}^n)=\{f\in C^{\infty}(\mathbb{R}^n)\lvert \forall \alpha,\beta\in \mathbb{N}^n_0, \sup_{x\in\mathbb{R}^n}\lvert x^{\alpha}\partial^{\beta}f(x)\rvert <\infty\}
+\end{equation}
+equipped with a countable family of semi-norms
+\begin{equation}
+\lVert f \rVert_{\alpha,\beta} := \sup_{x\in\mathbb{R}^n}\lvert x^{\alpha}\partial^{\beta}f(x)\rvert.
+\end{equation}
+\end{definition}
+
+You can think of the Schwartz space as functions that decay faster than any polynomial.
+
+\begin{definition}[Fourier transform]
+Given a function $f\in \mathcal{S}(\mathbb{R}^n)$, we define the Fourier transform by
+\begin{equation}
+\mathcal{F}(f)(\xi):=\int_{\Rn} f(x)e^{-2\pi ix\cdot \xi} dx.
+\end{equation}
+The inverse Fourier transform is given by
+\begin{equation}
+\mathcal{F}^{-1}(f)(\xi):=\int_{\Rn} f(x)e^{+2\pi ix\cdot \xi} dx.
+\end{equation}
+\end{definition}
+
+\begin{thm}[properties of Fourier transform and norms; source: exercise session 1]
+For $f\in \mathcal{S}(\mathbb{R}^n)$ the following holds:
+\begin{enumerate}
+\item $\lVert \mathcal{F}(f) \rVert_{L^2(\mathbb{R}^n)} = \lVert f \rVert_{L^2(\mathbb{R}^n)}$
+\item $\lVert \mathcal{F}(f) \rVert_{L^{\infty}(\mathbb{R}^n)} = \lVert f \rVert_{L^1(\mathbb{R}^n)}$
+\end{enumerate}
+\end{thm}
+
+\begin{thm}[properties of the Fourier transform; source: exercise session 1]
+For $f\in \mathcal{S}(\mathbb{R}^n)$ the following properties hold:
+\begin{enumerate}
+\item $\mathcal{F}(\partial_if(x))=2\pi i \xi_i \mathcal{F}(f)(\xi)$ 
+\item $\mathcal{F}(x_if(x))=-\frac{1}{2\pi i} \partial_{\xi_i} \mathcal{F}(f)(\xi)$
+\end{enumerate}
+\end{thm}
+
 \section{Important Inequalities}
 
 \subsection{Sobolev Embedding}
@@ -75,6 +131,13 @@ Then, there exists a subsequence $(\phi^{(i_{\lambda})})$ that converges in $C^{
 There exists a constant $C=C(n,s)>0$ such that for every $f\in H^s(\mathbb{R}^n)$ with $s>\frac{n}{2}$ we have
 \begin{equation}
 \lVert f \rVert_{L^{\infty}(\mathbb{R}^n)} \leq C \lVert f \rVert _{H^s(\mathbb{R}^n)}.
+\end{equation}
+\end{thm}
+
+\begin{thm}[source: sheet 1]
+If $s$ is a non-negative integer, there exists a constant $C=C(s)$ such that for every $f\in H^s(\mathbb{R}^n)$ with $s>\frac{n}{2}$ we have
+\begin{equation}
+\frac{1}{C} \sum_{\lvert\alpha\rvert\leq s} \lVert \partial ^{\alpha} f \rVert_{L^2(\mathbb{R}^n)} \leq \lVert f \rVert _{H^s(\mathbb{R}^n)} \leq C \sum_{\lvert\alpha\rvert\leq s} \lVert \partial ^{\alpha} f \rVert_{L^2(\mathbb{R}^n)}.
 \end{equation}
 \end{thm}
 
