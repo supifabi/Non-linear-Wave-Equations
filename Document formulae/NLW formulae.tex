@@ -1,0 +1,98 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{german}
+\usepackage{mathrsfs}
+\usepackage{csquotes}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{basicmath}
+\usepackage{bbm}
+
+\usepackage{subfig}
+
+\newtheorem{definition}{Definition}
+\newtheorem{bem}[definition]{Remark}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{thm}[definition]{Theorem}
+\newtheorem{bsp}[definition]{Example}
+\newtheorem{cor}[definition]{Corollary}
+
+\title{Non-Linear Wave Equations Basics}
+\author{Fabienne Klatt}
+\date{23.11.22}
+
+\begin{document}
+
+\tableofcontents
+\thispagestyle{empty}
+
+\clearpage
+
+Here everything can be written down that helps with understanding the Non-Linear Wave Equations Lecture and solving the exercises.
+
+\section{Norms Used}
+
+\section{Functional Analysis Theorems}
+
+\begin{thm}[Arzelà-Ascoli theorem, source: Wiki]
+Consider a sequence of functions $(f_n)$ defined on a compact interval. If this sequence is uniformly bounded and uniformly equicontinuous, then there exists a subsequence $(f_{n_k})$ that converges uniformly.
+\end{thm}
+
+\begin{definition}[uniformly equicontinuous]
+A sequence of functions $(f_n)$ is said to be uniformly equicontinuous if, for every $\varepsilon > 0$, there exists a $\delta > 0$ such that
+\begin{equation}
+\left|f_{n}(x)-f_{n}(y)\right|<\varepsilon
+\end{equation}
+whenever $| x-y |$ < $\delta$ for all functions $f_n$ in the sequence.
+\end{definition}
+
+This is the version of Arzelà-Ascoli used on example sheet 6, problem*, in a specific norm:
+
+\begin{thm}[Arzelà-Ascoli theorem, source: solution to sheet 5]
+Suppose there is a sequence (of solutions) $(\phi^{(i)})$ in $C^{k-1}([0,T]\times \mathbb{R}^n)$ that converges to $\phi$ in a $C^{k-1}([0,T]\times \mathbb{R}^n)$-sense and is uniformly bounded, meaning $\lVert \partial ^k \phi \rVert _{L^{\infty}} \leq A$ ($A$ not dependent on $i$).\\
+Then, there exists a subsequence $(\phi^{(i_{\lambda})})$ that converges in $C^{k}([0,T]\times \mathbb{R}^n)$.
+\end{thm}
+
+\begin{thm}[Banach-Alaoglu]
+\end{thm}
+
+\begin{thm}[Riesz Representation thm]
+\end{thm}
+
+\section{Fourier Transformation}
+
+\section{Important Inequalities}
+
+\subsection{Sobolev Embedding}
+
+\begin{thm}[Sobolev embedding thm; source: sheet 1]
+There exists a constant $C=C(n,s)>0$ such that for every $f\in H^s(\mathbb{R}^n)$ with $s>\frac{n}{2}$ we have
+\begin{equation}
+\lVert f \rVert_{L^{\infty}(\mathbb{R}^n)} \leq C \lVert f \rVert _{H^s(\mathbb{R}^n)}.
+\end{equation}
+\end{thm}
+
+\begin{thm}[second Sobolev embedding thm; source: Wiki]
+If $n<pk$ and $r+\alpha=k-\frac{n}{p}$ with $\alpha \in (0,1)$, then one has the embedding
+\begin{equation}
+W^{k,p}(\mathbb{R}^n) \subset C^{r,\alpha}(\mathbb{R}^n).
+\end{equation}
+\end{thm}
+
+
+\section{Basic Analysis}
+
+\begin{thm}[Young's Inequality]
+Let $p$ and $q$ be positive real numbers such that $\frac{1}{p} + \frac{1}{q} = 1$. Then, for any non-negative $a$ and $b$ it holds
+\begin{equation}
+ab=\frac{a^p}{p}+\frac{b^q}{q}.
+\end{equation}
+\end{thm}
+
+\end{document}
