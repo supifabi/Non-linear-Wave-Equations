@@ -76,6 +76,15 @@ Then, there exists a subsequence $(\phi^{(i_{\lambda})})$ that converges in $C^{
 \begin{thm}[Banach-Alaoglu]
 \end{thm}
 
+\begin{definition}[Weak Convergence; source: Wiki]
+A sequence of elements $(x_n)$ in a Hilbert space $H$ is said to converge weakly to $x\in H$ if
+\begin{equation}
+\langle x_n, y \rangle \rightarrow \langle x, y \rangle
+\end{equation}
+for all $y\in H$, $\langle \cdot , \cdot \rangle$ denoting the inner product of $H$. \\
+Notation: $x_n \rightharpoonup x$
+\end{definition}
+
 \begin{thm}[Riesz Representation thm]
 \end{thm}
 
@@ -141,6 +150,10 @@ If $s$ is a non-negative integer, there exists a constant $C=C(s)$ such that for
 \end{equation}
 \end{thm}
 
+\begin{thm}
+Sobolev inequality with $C^2(\Rn)$ used in Problem*, sheet 6. Not found...
+\end{thm}
+
 \begin{thm}[second Sobolev embedding thm; source: Wiki]
 If $n<pk$ and $r+\alpha=k-\frac{n}{p}$ with $\alpha \in (0,1)$, then one has the embedding
 \begin{equation}
@@ -149,13 +162,29 @@ W^{k,p}(\mathbb{R}^n) \subset C^{r,\alpha}(\mathbb{R}^n).
 \end{thm}
 
 
-\section{Basic Analysis}
+\section{Basic Analysis, Measure Theory}
 
 \begin{thm}[Young's Inequality]
 Let $p$ and $q$ be positive real numbers such that $\frac{1}{p} + \frac{1}{q} = 1$. Then, for any non-negative $a$ and $b$ it holds
 \begin{equation}
 ab=\frac{a^p}{p}+\frac{b^q}{q}.
 \end{equation}
+\end{thm}
+
+\begin{thm}[Lebesgue Monotone Convergence; source: math3ma.com]
+Suppose $(f_n:X\rightarrow [0,\infty))$ being a monotonically increasing sequence of measurable functions on a measurable set $X$ such that $f_n\rightarrow f$ pointwise almost everywhere, then
+\begin{equation}
+\lim_{n\rightarrow\infty} \int_X f_n = \int_X f.
+\end{equation}
+\end{thm}
+
+\begin{thm}[Fatou's Lemma; source: Wiki]
+Given a measure space $(\Omega, \mathcal{F}, \mu)$ and a set $X\in \mathcal{F}$, let $(f_n:X\rightarrow [0,\infty])$ be  a sequence of measurable funtions. Define the function $F_X\rightarrow[0,\infty]$ by setting $f(x)=\liminf_{n\rightarrow\infty} f_n(x)$ for every $x\in X$.\\
+Then $f$ is measurable, and also
+\begin{equation}
+\int_X f d\mu \leq \liminf_{n\rightarrow \infty}\int_X f_n d\mu
+\end{equation} 
+where the integrals may be infinite.
 \end{thm}
 
 \end{document}
