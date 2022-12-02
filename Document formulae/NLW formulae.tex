@@ -187,4 +187,11 @@ Then $f$ is measurable, and also
 where the integrals may be infinite.
 \end{thm}
 
+\begin{thm}[Change of Variables Formula; source: Wiki]
+Let $\Omega \subset \Rn$ be an open set, $\Phi: \Omega \rightarrow \Phi(\Omega)\subset\Rn$ a diffeomorphism. A function $f$ is integrable on $\Phi(\Omega)$ iff the function $x \mapsto f(\Phi(x))\lvert Det(D\Phi(x)) \rvert$ is integrable on $\Omega$. Then we have
+\begin{equation}
+\int_{\Phi(\Omega)} f(y) dy = \int_{\Omega} f(\Phi(x))\lvert \det(D\Phi(x)) \rvert dx.
+\end{equation}
+\end{thm}
+
 \end{document}
