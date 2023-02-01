@@ -54,6 +54,18 @@ where $(1+\lvert\xi\rvert^2)^{\frac{s}{2}}$ corresponds to a derivative in physi
 
 \section{Functional Analysis Theorems}
 
+\begin{thm}[Gronwall´s Lemma]
+Let $f:\mathbb{R}\rightarrow\mathbb{R}$ be a non-negative continuous function and $g:\mathbb{R}\rightarrow\mathbb{R}$ be a  non-negative integrable function such that
+\begin{equation}
+f(t)\leq A+\int_0^tf(s)g(s)ds
+\end{equation}
+holds for some $A\geq 0$ for every $t\in[0,T]$. Then
+\begin{equation}
+f(t)\leq A\exp(\int_0^t g(s) ds)
+\end{equation}
+holds for every $t\in[0,T]$.
+\end{thm}
+
 \begin{thm}[Arzelà-Ascoli theorem, source: Wiki]
 Consider a sequence of functions $(f_n)$ defined on a compact interval. If this sequence is uniformly bounded and uniformly equicontinuous, then there exists a subsequence $(f_{n_k})$ that converges uniformly.
 \end{thm}
@@ -164,10 +176,24 @@ W^{k,p}(\mathbb{R}^n) \subset C^{r,\alpha}(\mathbb{R}^n).
 
 \section{Basic Analysis, Measure Theory}
 
-\begin{thm}[Young's Inequality]
+\begin{thm}[Young´s Inequality]
 Let $p$ and $q$ be positive real numbers such that $\frac{1}{p} + \frac{1}{q} = 1$. Then, for any non-negative $a$ and $b$ it holds
 \begin{equation}
 ab=\frac{a^p}{p}+\frac{b^q}{q}.
+\end{equation}
+\end{thm}
+
+\begin{thm}[Young´s Inequality Special case]
+Let $x,y\in \Rn$, $\delta > 0$, $p,q>1$ such that $\frac{1}{p} + \frac{1}{q} = 1$. Then we have
+\begin{equation}
+\vert xy\vert \leq \delta \vert x \vert^2 + \frac{1}{4\delta}\vert y \vert^2.
+\end{equation}
+\end{thm}
+
+\begin{thm} [Hölder´s Inequality; source: Wiki]
+Let $p$ and $q$ be positive real numbers such that $\frac{1}{p} + \frac{1}{q} = 1$.Then, if $f \in L^p$ and $g\in L^q$:
+\begin{equation}
+\lVert fg \rVert_{L^1} \leq \lVert f \rVert_{L^p} \lVert g \rVert_{L^q}.
 \end{equation}
 \end{thm}
 
