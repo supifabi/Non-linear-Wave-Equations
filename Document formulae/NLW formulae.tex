@@ -41,8 +41,26 @@ Here everything can be written down that helps with understanding the Non-Linear
 \section{Norms}
 
 \begin{definition}[Sobolev space]
-
+The following is called Sobolev space:
+\begin{equation}
+W^{k,p}(\Omega)=\{u\in L^p(\Omega)\Vert \forall\alpha\in\mathbb{N}^n, \vert\alpha\vert\leq k:\exists D^{\alpha}u\in L^p(\Omega)\}
+\end{equation}
+with the Sobolev Norm, if $p<\infty$:
+\begin{equation}
+\lVert u\rVert_{W^{k,p}(\Omega)}=(\sum_{\vert\alpha\vert\leq k} \lVert \partial^{\alpha}u\rVert^p_{L^p(\Omega)})^{\frac{1}{p}}
+\end{equation}
+and if $p=\infty$:
+\begin{equation}
+\lVert u\rVert_{W^{k,p}(\Omega)}= \max_{\vert\alpha\vert\leq k} \lVert \partial^{\alpha}u\rVert_{L^{\infty}(\Omega)}.
+\end{equation}
+Notation: 
+\begin{equation}
+H^k(\Omega):=W^{k,2}(\Omega)
+\end{equation}
 \end{definition}
+
+$W^{k,p}(\Omega)$ is a Banach space.
+$C^{k,p}(\Omega)$ is a dense subset of $W^{k,p}(\Omega)\subset L^p(\Omega)$. $H^k(\Omega)$ is a Hilbertspace.
 
 \begin{definition}[fractional Sobolev space; source: exercise session 1]
 For $s\in\mathbb{R}$ (?) $H^s(\mathbb{R}^n)$ is the completion of $C^{\infty}_0(\mathbb{R}^n)$ with respect to the norm
@@ -64,6 +82,18 @@ holds for some $A\geq 0$ for every $t\in[0,T]$. Then
 f(t)\leq A\exp(\int_0^t g(s) ds)
 \end{equation}
 holds for every $t\in[0,T]$.
+\end{thm}
+
+\begin{thm}[Hahn-Banach]
+Let $\phi$ be a bounded linear functional on a subspace $M$ of a normed (real) vectorspace $X$. Then there exists a bounded linear functional $\Phi$ on $X$ which is an extension of $\phi$ to $X$ and has the same norm, i.e.
+\begin{equation}
+\lVert\Phi\rVert_X=\lVert \phi \rVert_M,
+\end{equation}
+where
+\begin{equation}
+\lVert\Phi\rVert_X=\sup_{x\in X,\lVert x\rVert=1} \vert\Phi(x)\vert, 
+\lVert \phi \rVert_M = \sup_{x\in M,\lVert x\rVert=1} \vert\phi(x)\vert.
+\end{equation}
 \end{thm}
 
 \begin{thm}[Arzelà-Ascoli theorem, source: Wiki]
@@ -146,6 +176,14 @@ For $f\in \mathcal{S}(\mathbb{R}^n)$ the following properties hold:
 
 \section{Important Inequalities}
 
+\begin{thm}[The interpolation inequality]
+We have
+\begin{equation}
+\lVert f \rVert_{H^s(\Rn)} \leq C(s_1,s_2,s_n)\lVert f \rVert_{H^{s_1}(\Rn)}^{\theta_1} \lVert f \rVert_{H^{s_2}(\Rn)}^{\theta_2},
+\end{equation}
+where $0\leq s_1\leq s \leq s_2$, $\theta_1+\theta_2=1$ and $\theta_1s_1+\theta_2s_2=s$.
+\end{thm}
+
 \subsection{Sobolev Embedding}
 
 \begin{thm}[Sobolev embedding thm; source: sheet 1]
@@ -218,6 +256,14 @@ Let $\Omega \subset \Rn$ be an open set, $\Phi: \Omega \rightarrow \Phi(\Omega)\
 \begin{equation}
 \int_{\Phi(\Omega)} f(y) dy = \int_{\Omega} f(\Phi(x))\lvert \det(D\Phi(x)) \rvert dx.
 \end{equation}
+\end{thm}
+
+\begin{thm}[Picard-Lindelöf]
+Let $G\subset \mathbb{R}\times\Rn$ be open and $f:G\rightarrow \Rn$ a continuous function satisfying a Lipschitz property locally. Then for every $(a,c)\in G$ there exists a $\epsilon >0$ and a solution
+\begin{equation}
+\phi:[a-\epsilon,a+\epsilon]\rightarrow\Rn
+\end{equation}
+for the ODE $y'=f(x,y)$ with initial data $\phi(a)=c$.
 \end{thm}
 
 \end{document}
