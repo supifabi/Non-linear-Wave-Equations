@@ -3,7 +3,6 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsfonts}
 \usepackage{amsthm}
-\usepackage{german}
 \usepackage{mathrsfs}
 \usepackage{csquotes}
 \usepackage{lmodern}
@@ -68,6 +67,19 @@ For $s\in\mathbb{R}$ (?) $H^s(\mathbb{R}^n)$ is the completion of $C^{\infty}_0(
 \lVert f \rVert_{H^s(\mathbb{R}^n)}=\lVert (1+\lvert\xi\rvert^2)^{\frac{s}{2}}\mathcal{F}(f)\rVert_{L^2(\mathbb{R}^n)}
 \end{equation}
 where $(1+\lvert\xi\rvert^2)^{\frac{s}{2}}$ corresponds to a derivative in physical space.
+\end{definition}
+
+\begin{definition}[homogeneous Sobolev norm; source: mathoverflow(!!)]
+If the following quantity is bounded, then we have
+\begin{equation}
+\lVert f \rVert_{\dot H^s(\Rn)}=(\int_{\Rn} \vert \xi\vert^{2s} \vert \hat{f}(\xi)\vert^2 d\xi)^{\frac{1}{2}}
+\end{equation}
+\end{definition}
+
+\begin{definition}[$\dot H^1$-norm; source: notes p 16 (!!)]
+\begin{equation}
+\lVert \phi \rVert_{\dot H^1(\Rn)} = (\int_{\Rn} \vert \nabla \phi \vert^2dx)^{\frac{1}{2}}
+\end{equation}
 \end{definition}
 
 \section{Functional Analysis Theorems}
@@ -193,6 +205,13 @@ We have
 where $0\leq s_1\leq s \leq s_2$, $\theta_1+\theta_2=1$ and $\theta_1s_1+\theta_2s_2=s$.
 \end{thm}
 
+\begin{thm}[Gargliardo-Nirenberg interpolation estimate; source: sheet 5]
+Let $\phi \in H^s(\Rn)\cap L^{\infty}(\Rn)$. For $0<\vert \alpha \vert < s$ we have
+\begin{equation}
+\lVert D^{\alpha} \phi \rVert_{L^{\frac{2s}{\vert \alpha \vert}}(\Rn)} \leq C(\vert \alpha \vert,s,n)(\lVert \phi \rVert_{L^{\infty}(\Rn)})^{1-\frac{\vert \alpha \vert}{s}}(\lVert \phi \rVert _{\dot H^s(\Rn)})^{\frac{\vert \alpha \vert}{s}}.
+\end{equation}
+\end{thm}
+
 \subsection{Sobolev Embedding}
 
 \begin{thm}[Sobolev embedding thm; source: sheet 1]
@@ -209,8 +228,19 @@ If $s$ is a non-negative integer, there exists a constant $C=C(s)$ such that for
 \end{equation}
 \end{thm}
 
-\begin{thm}
-Sobolev inequality with $C^2(\Rn)$ used in Problem*, sheet 6. Not found...
+\begin{thm}[source: solution to sheet 3]
+Let $f \in \mathcal{S}(\mathbb{R}^n)$. If $s>k+\frac{n}{2}$, then
+\begin{equation}
+\lVert f \rVert_{C_b^k(\Rn,\mathbb{C})}\leq C \lVert f \rVert_{H^s},
+\end{equation}
+where the $b$ means bounded.
+\end{thm}
+
+\begin{thm}[source: sheet 6]
+For $0\leq s<\frac{n}{2}$ there exists a constant $C=C(s,n)$, such that
+\begin{equation}
+\lVert \phi \rVert_{L^{\frac{2n}{n-2s}}(\Rn)} \leq C\lVert \phi \rVert_{\dot H^s(\Rn)}.
+\end{equation}
 \end{thm}
 
 \begin{thm}[second Sobolev embedding thm; source: Wiki]
