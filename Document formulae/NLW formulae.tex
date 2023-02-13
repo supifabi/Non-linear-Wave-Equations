@@ -46,7 +46,7 @@ W^{k,p}(\Omega)=\{u\in L^p(\Omega)\Vert \forall\alpha\in\mathbb{N}^n, \vert\alph
 \end{equation}
 with the Sobolev Norm, if $p<\infty$:
 \begin{equation}
-\lVert u\rVert_{W^{k,p}(\Omega)}=(\sum_{\vert\alpha\vert\leq k} \lVert \partial^{\alpha}u\rVert^p_{L^p(\Omega)})^{\frac{1}{p}}
+\lVert u\rVert_{W^{k,p}(\Omega)}=\bigl(\sum_{\vert\alpha\vert\leq k} \lVert \partial^{\alpha}u\rVert^p_{L^p(\Omega)}\bigr)^{\frac{1}{p}}
 \end{equation}
 and if $p=\infty$:
 \begin{equation}
@@ -72,15 +72,31 @@ where $(1+\lvert\xi\rvert^2)^{\frac{s}{2}}$ corresponds to a derivative in physi
 \begin{definition}[homogeneous Sobolev norm; source: mathoverflow(!!)]
 If the following quantity is bounded, then we have
 \begin{equation}
-\lVert f \rVert_{\dot H^s(\Rn)}=(\int_{\Rn} \vert \xi\vert^{2s} \vert \hat{f}(\xi)\vert^2 d\xi)^{\frac{1}{2}}
+\lVert f \rVert_{\dot H^s(\Rn)}=\Bigl(\int_{\Rn} \vert \xi\vert^{2s} \vert \hat{f}(\xi)\vert^2 d\xi \Bigr)^{\frac{1}{2}}
 \end{equation}
 \end{definition}
 
 \begin{definition}[$\dot H^1$-norm; source: notes p 16 (!!)]
 \begin{equation}
-\lVert \phi \rVert_{\dot H^1(\Rn)} = (\int_{\Rn} \vert \nabla \phi \vert^2dx)^{\frac{1}{2}}
+\lVert \phi \rVert_{\dot H^1(\Rn)} = \Bigl(\int_{\Rn} \vert \nabla \phi \vert^2dx \Bigr)^{\frac{1}{2}}
 \end{equation}
 \end{definition}
+
+\begin{definition}[mixed spaces; source: lecture notes p.39]
+For $1 \leq r < \infty$, $1 \leq q < \infty$ we define $L_t^qL_x^r$ to be the space of (equivalence class of) measurable functions on $\mathbb{R}_t \times \Rn_x$ such that the norm
+\begin{equation}
+\lVert u \rVert_{L_t^qL_x^r} = \Bigl( \int_{\mathbb{R}} dt \Bigl( \int_{\Rn} \vert u(t,x) \vert^r dx \Bigr)^{\frac{q}{r}} \Bigr)^{\frac{1}{q}} 
+\end{equation}
+\end{definition}
+
+\begin{thm}[properties of mixed spaces; source: lecture notes p.39]
+The following facts hold for the mixed spaces $L_t^qL_x^r$:
+\begin{enumerate}
+\item The $L_t^qL_x^r$ are Banach spaces. \\
+\item Smooth functions of compact support $C_0^{\infty}(\mathbb{R}_t \times \Rn_x)$ are dense in $L_t^qL_x^r$. \\
+\item The dual of $L_t^qL_x^r$ can be identified with $L_t^{q'}L_x^{r'}$ where $\frac{1}{q}+\frac{1}{q'}=1$ and $\frac{1}{r}+\frac{1}{r'}=1$.
+\end{enumerate}
+\end{thm}
 
 \section{Functional Analysis Theorems}
 
@@ -99,7 +115,7 @@ f(t)\leq A+\int_0^tf(s)g(s)ds
 \end{equation}
 holds for some $A\geq 0$ for every $t\in[0,T]$. Then
 \begin{equation}
-f(t)\leq A\exp(\int_0^t g(s) ds)
+f(t)\leq A\exp\Bigl(\int_0^t g(s) ds\Bigr)
 \end{equation}
 holds for every $t\in[0,T]$.
 \end{thm}
