@@ -167,6 +167,18 @@ Notation: $x_n \rightharpoonup x$
 \begin{thm}[Riesz Representation thm]
 \end{thm}
 
+\begin{thm}[Banach's Fixed Point Thm; source: Wiki]
+Let $(X,\lVert \cdot \rVert)$ be a non-empty complete metric space and $T:X\rightarrow X$ a contraction mapping. Then $T$ admits a unique fixed point $x^*$ in $X$, so $T(x^*)=x^*$.
+\end{thm}
+
+\begin{definition}[contraction mapping]
+A map $T:x\rightarrow X$ is called a contraction mapping if there exists a $q\in [0,1)$ such that
+\begin{equation}
+\lVert T(x)-T(y) \rVert \leq q \lVert x-y \rVert
+\end{equation}
+for all $x,y\in X$.
+\end{definition}
+
 \section{Fourier Transformation}
 
 Open Question: What is the advantage of Fourier representation?
